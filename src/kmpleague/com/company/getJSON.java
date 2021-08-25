@@ -15,6 +15,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class getJSON {
 
@@ -59,14 +61,15 @@ public class getJSON {
         //put ranked queues in an iterable list to apply to our summoners
         try {
              queues = objectMapper.readValue(jsonInfo.toString(), new TypeReference<List<RankedQueue>>(){});
+            for(RankedQueue queue : queues)
+                if(queue.getQueueType().equalsIgnoreCase("RANKED_FLEX_SR"))
+                    summoner.setFlex(queue);
+                else
+                    summoner.setFiveVFive(queue);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        for(RankedQueue queue : queues)
-            if(queue.getQueueType().equalsIgnoreCase("RANKED_FLEX_SR"))
-                summoner.setFlex(queue);
-            else
-                summoner.setFiveVFive(queue);
+
 
         //Now its time to get top 3 champions
         jsonInfo.setLength(0);
@@ -78,7 +81,41 @@ public class getJSON {
             e.printStackTrace();
         }
 
+        objectMapper = new ObjectMapper();
+        List<Mastery> champMasteries = new ArrayList<Mastery>();
+        //put ranked queues in an iterable list to apply to our summoners
+        try {
+            champMasteries = objectMapper.readValue(jsonInfo.toString(), new TypeReference<List<Mastery>>(){});
+            summoner.setMasteryList(champMasteries);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        //masteries populated. Add names to masteries using static api
+        //get most current version of game
+        jsonInfo.setLength(0);
+        Pattern p;
+        Matcher m;
+
+        try {
+            jsonInfo.append(connResult(new URL("https://ddragon.leagueoflegends.com/api/versions.json")));
+            p = Pattern.compile("\"([^\"]*)\"");
+            m = p.matcher(jsonInfo);
+
+            m.find();
+            jsonInfo.setLength(0);
+            jsonInfo.append(connResult(new URL("https://ddragon.leagueoflegends.com/cdn/"+m.group(1)+"/data/en_US/champion.json")));
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
+        //jsoninfo should now have JSON result containing information on the most recent patch
+        //Time to populate champion names
+
+
+
         return summoner.getName() +" -> Flex: "+summoner.getFlex().getTier() + " " +summoner.getFlex().getRank() + "\tSolo/Duo: " + summoner.getFiveVFive().getTier()+" " +summoner.getFiveVFive().getRank();
+
 
 
     }

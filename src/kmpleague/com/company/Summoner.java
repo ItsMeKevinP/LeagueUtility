@@ -1,5 +1,7 @@
 package kmpleague.com.company;
 
+import java.util.List;
+
 public class Summoner {
 
     private String id; //    Encrypted summoner ID. Max length 63 characters.
@@ -13,6 +15,16 @@ public class Summoner {
     private RankedQueue flex;
     private RankedQueue fiveVFive;
 
+    private List<Mastery> masteryList;
+
+
+    public List<Mastery> getMasteryList() {
+        return masteryList;
+    }
+
+    public void setMasteryList(List<Mastery> masteryList) {
+        this.masteryList = masteryList;
+    }
 
 
     public void setAccountId(String accountId) {

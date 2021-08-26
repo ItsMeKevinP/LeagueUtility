@@ -6,14 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="739f3d88-453d-4f0b-9738-a279eeb3cbc9" name="Default Changelist" comment="Summoner object created and ranked queue population">
       <changelist_data name="ItsMeKevin" email="" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/kmpleague/com/company/Mastery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/kmpleague/com/company/SummonerStatsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/summonerStats.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LeagueUtility.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LeagueUtility.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeagueUtility/kmpleague/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeagueUtility/kmpleague/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LeagueUtility/kmpleague/com/company/Summoner.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeagueUtility/kmpleague/com/company/Summoner.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LeagueUtility/kmpleague/com/company/getJSON$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeagueUtility/kmpleague/com/company/getJSON$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LeagueUtility/kmpleague/com/company/getJSON.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LeagueUtility/kmpleague/com/company/getJSON.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kmpleague/com/company/Summoner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kmpleague/com/company/Summoner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kmpleague/com/company/getJSON.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kmpleague/com/company/getJSON.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/kmpleague/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kmpleague/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,13 +116,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/bin/jackson-databind-2.9.9.jar" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../javafx-sdk-16/lib" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RunManager">
@@ -193,6 +195,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
